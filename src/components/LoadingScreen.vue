@@ -109,7 +109,7 @@ const startLoading = () => {
       messageIndex = (messageIndex + 1) % loadingMessages.length
       currentMessage.value = loadingMessages[messageIndex]
     }
-  }, 1500)
+  }, 3500)
 }
 
 const completeLoading = () => {
@@ -119,7 +119,7 @@ const completeLoading = () => {
   // Emit loading complete after animation
   setTimeout(() => {
     emit('loading-complete')
-  }, 3000)
+  }, 1000)
 }
 
 const clearIntervals = () => {
@@ -444,7 +444,7 @@ const clearIntervals = () => {
     transform: translateX(-100%);
   }
   50% {
-    transform: translateX(50%);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(100%);
