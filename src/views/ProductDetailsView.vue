@@ -511,7 +511,7 @@ p {
 
   .addButton {
     width: 200px;
-    margin: 0 auto 0 0; /* Move button to left on phones */
+    margin: 0; /* Move button to left on phones */
     display: block;
   }
 
