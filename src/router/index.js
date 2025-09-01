@@ -14,7 +14,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'Home - Your Schair Store',
+        title: 'Schair Store - Home',
         description:
           'Welcome to Your Schair Store - Premium furniture and home decor. Discover quality chairs, tables, and home accessories for your perfect living space.',
       },
@@ -24,7 +24,7 @@ const router = createRouter({
       name: 'about',
       component: AboutView,
       meta: {
-        title: 'About Us - Your Schair Store',
+        title: 'Schair Store - About Us',
         description:
           'Learn about Your Schair Store - our story, mission, and commitment to providing quality furniture and exceptional customer service.',
       },
@@ -34,7 +34,7 @@ const router = createRouter({
       name: 'contact',
       component: ContactView,
       meta: {
-        title: 'Contact Us - Your Schair Store',
+        title: 'Schair Store - Contact Us',
         description:
           "Get in touch with Your Schair Store. We're here to help you find the perfect furniture for your home. Contact us today!",
       },
@@ -44,7 +44,7 @@ const router = createRouter({
       name: 'products',
       component: ProductsView,
       meta: {
-        title: 'Products - Your Schair Store',
+        title: 'Schair Store - Products',
         description:
           'Browse our extensive collection of premium furniture including chairs, tables, and home accessories. Find the perfect pieces for your home.',
       },
@@ -54,7 +54,7 @@ const router = createRouter({
       name: 'product',
       component: ProductDetailsView,
       meta: {
-        title: 'Product Details - Your Schair Store',
+        title: 'Schair Store - Product Details',
         description:
           'Explore detailed information about our premium furniture products. View specifications, images, and pricing for quality home decor items.',
       },
@@ -64,7 +64,7 @@ const router = createRouter({
       name: 'cart',
       component: CartView,
       meta: {
-        title: 'Shopping Cart - Your Schair Store',
+        title: 'Schair Store - Shopping Cart',
         description:
           'Review your shopping cart at Your Schair Store. Complete your purchase of premium furniture and home decor items.',
       },
@@ -75,7 +75,7 @@ const router = createRouter({
 // Set document title and meta description based on route meta
 router.beforeEach((to, from, next) => {
   // Set the title from route meta, or use default
-  document.title = to.meta.title || 'Your Schair Store'
+  document.title = to.meta.title || 'Schair Store'
 
   // Update meta description if available
   const metaDescription = document.querySelector('meta[name="description"]')
