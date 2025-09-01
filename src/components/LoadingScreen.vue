@@ -119,7 +119,7 @@ const completeLoading = () => {
   // Emit loading complete after animation
   setTimeout(() => {
     emit('loading-complete')
-  }, 1000)
+  }, 3000)
 }
 
 const clearIntervals = () => {
