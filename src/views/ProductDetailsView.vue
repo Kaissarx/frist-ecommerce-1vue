@@ -510,9 +510,10 @@ p {
   }
 
   .addButton {
-    width: 200px;
+    width: 180px;
     margin: 0; /* Move button to left on phones */
     display: block;
+    padding-left: 10px !important;
   }
 
   /* Show collapsible buttons on mobile */
