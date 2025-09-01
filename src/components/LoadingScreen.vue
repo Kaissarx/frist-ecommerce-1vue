@@ -443,6 +443,9 @@ const clearIntervals = () => {
   0% {
     transform: translateX(-100%);
   }
+  50% {
+    transform: translateX(50%);
+  }
   100% {
     transform: translateX(100%);
   }
