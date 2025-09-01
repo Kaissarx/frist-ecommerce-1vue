@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="product-details py-5">
-    <div class="container">
+      <div class="container">
         <div class="row">
           <!-- Left Side: Thumbnail Images (Hidden on small screens) -->
           <div class="col-lg-2 d-none d-lg-block">
@@ -15,20 +15,20 @@
                     class="img-fluid thumbnail-img"
                     :alt="item.name"
                   />
-            </div>
+                </div>
               </div>
             </div>
-              </div>
+          </div>
 
           <!-- Middle: Main Product Image (Responsive columns) -->
-          <div class="col-6 col-lg-5 col-phone-7">
+          <div class="col-6 col-lg-5">
             <div class="main-image-container">
               <img :src="item.imgUrl" :alt="item.name" class="img-fluid itemImg" />
             </div>
           </div>
 
           <!-- Right: Product Details (Responsive columns) -->
-          <div class="col-6 col-lg-5 col-phone-5">
+          <div class="col-6 col-lg-5">
             <div class="product-info">
               <h2 class="product-title">{{ item.name }}</h2>
 
@@ -75,7 +75,7 @@
                 >
                   Show Less
                 </button>
-            </div>
+              </div>
 
               <!-- Color Selection (Keep exact logic, enhance styling) -->
               <div class="color-section">
@@ -89,8 +89,8 @@
                     @click="handelColorChange(color.color, color.id)"
                     class="color-swatch"
                   ></span>
-          </div>
-        </div>
+                </div>
+              </div>
 
               <!-- Quantity Section (Keep exact logic, enhance styling) -->
               <div class="quantity-section">
@@ -103,8 +103,8 @@
                   <a href="" class="qtyButton" @click.stop.prevent="handelQtyChange(true)">
                     <i class="bi bi-plus"></i>
                   </a>
-        </div>
-      </div>
+                </div>
+              </div>
 
               <!-- Add to Cart Button (Keep exact logic, enhance styling) -->
               <div class="action-section">
@@ -200,7 +200,7 @@ const handelQtyChange = (add = true) => {
     qty.value += 1
   } else {
     if (qty.value < 2) return
-      qty.value -= 1
+    qty.value -= 1
   }
 }
 </script>
@@ -389,11 +389,11 @@ p {
 /* Responsive Design for Small Screens */
 @media (max-width: 991px) {
   /* Hide thumbnails completely on small screens */
+
   .col-lg-2 {
     display: none !important;
   }
 
-  /* Make remaining sections smaller */
   .col-6 {
     padding: 0 10px;
   }
@@ -409,18 +409,65 @@ p {
   }
 
   .product-info {
-    padding: 20px;
+    padding: 25px;
     margin-top: 0;
   }
 
   .product-details h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .itemPrice {
     gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .currentPrice {
+    font-size: 1.5rem;
+  }
+
+  .currentPrice .now {
+    font-size: 2.2rem;
+  }
+
+  .color {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .quantity {
+    width: 120px;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  .addButton {
+    width: 120px !important;
+    padding: 10px 0px !important;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .col-6 {
+    padding: 0 10px;
+  }
+
+  .main-image-container {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .product-info {
+    padding: 20px 15px;
+  }
+
+  .product-details h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
   }
 
   .currentPrice {
@@ -431,69 +478,12 @@ p {
     font-size: 2rem;
   }
 
-  .color {
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-
-  .quantity {
-    width: 100px;
-    padding: 8px;
-    margin-bottom: 30px;
-  }
-
-  .addButton {
-    width: 250px;
-    padding: 8px 20px;
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 767px) {
-  /* Phone-specific column layout: 7+5 instead of 6+6 */
-  .col-phone-7 {
-    flex: 0 0 58.333333% !important; /* 7/12 columns */
-    max-width: 58.333333% !important;
-  }
-
-  /* Move chair image down on phones */
-  .main-image-container {
-    margin-top: 60px; /* Push image down on phones */
-  }
-
-  .col-phone-5 {
-    flex: 0 0 41.666667% !important; /* 5/12 columns */
-    max-width: 41.666667% !important;
-  }
-
-  .col-6 {
-    padding: 0 5px;
-  }
-
-  .product-info {
-    padding: 15px;
-  }
-
-  /* Smaller fonts for phones */
-  .product-details h2 {
-    font-size: 1.4rem; /* Smaller than current 1.6rem */
-    text-align: center;
-  }
-
-  .currentPrice {
-    font-size: 1.2rem; /* Smaller than current 1.4rem */
-  }
-
-  .currentPrice .now {
-    font-size: 1.8rem; /* Smaller than current 2rem */
-  }
-
   .price {
-    font-size: 1.1rem; /* Smaller font for price */
+    font-size: 1.2rem;
   }
 
   .discount {
-    font-size: 1rem; /* Smaller font for discount */
+    font-size: 1.1rem;
   }
 
   .itemPrice {
@@ -510,20 +500,17 @@ p {
   }
 
   .addButton {
-    width: 180px;
-    margin: 0; /* Move button to left on phones */
+    width: 200px;
+    margin: 0 auto;
     display: block;
-    padding-left: 10px !important;
   }
 
-  /* Show collapsible buttons on mobile */
   .know-more-btn,
   .show-less-btn {
     display: block;
     margin: 10px auto 0 auto;
   }
 
-  /* Mobile-specific text styling */
   .mobile-short {
     display: block;
   }
